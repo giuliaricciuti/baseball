@@ -40,3 +40,21 @@ class DAO():
         conn.close()
         return result
 
+    @staticmethod
+    def getPesoSquadra(teamID, anno):
+        conn = DBConnect.get_connection()
+
+        result = []
+
+        cursor = conn.cursor()
+        query = """select SUM(s.salary)
+                    FROM salaries s 
+                    WHERE s.teamID = %s
+                    AND s.`year` = %s"""
+
+        cursor.execute(query, (teamID, anno))
+
+        result = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        return result[0]

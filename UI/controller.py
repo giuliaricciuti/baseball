@@ -20,7 +20,7 @@ class Controller:
         self._view.update_page()
 
     def handleDettagli(self, e):
-        pass
+        self._model.handleDettagli(self._squadra)
 
     def handlePercorso(self, e):
         pass

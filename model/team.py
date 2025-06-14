@@ -32,4 +32,4 @@ class Team:
         return self.ID == other.ID
 
     def __str__(self):
-        return self.teamCode
+        return f"{self.teamCode} ({self.name})"
