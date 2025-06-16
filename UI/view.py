@@ -35,6 +35,7 @@ class View(ft.UserControl):
         row2 = ft.Row([cont, self._btnCreaGrafo], alignment=ft.MainAxisAlignment.CENTER, vertical_alignment=ft.CrossAxisAlignment.END)
 
         self._ddSquadra = ft.Dropdown(label="Squadra")
+        self.controller.fillDDTeam()
         self._btnDettagli = ft.ElevatedButton(text="Dettagli", on_click=self._controller.handleDettagli)
         self._btnPercorso = ft.ElevatedButton(text="Percorso", on_click=self._controller.handlePercorso)
         row3 = ft.Row([ft.Container(self._ddSquadra, width=250),
